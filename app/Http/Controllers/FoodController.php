@@ -15,6 +15,7 @@ class FoodController extends Controller
         return view('food.create');
     }
     public function store(Request $request){
-        dd($request->all()); //dd mostra os dados na tela: dump and die; nesse caso exibe tudo que vai vir no request
+        Food::create($request->all());  //dd mostra os dados na tela: dump and die; nesse caso exibe tudo que vai vir no request
+        return redirect('/food'); 
     }
 }
