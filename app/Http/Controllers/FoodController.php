@@ -18,4 +18,11 @@ class FoodController extends Controller
         Food::create($request->all());  //dd mostra os dados na tela: dump and die; nesse caso exibe tudo que vai vir no request
         return redirect('/food'); 
     }
+    public function edit(Food $food){
+        return view('food.edit', ['food' => $food]);
+    }
+    public function update(Food $food, Request $request){
+        $food->update($request->all());
+        return redirect('/food');
+    }
 }
