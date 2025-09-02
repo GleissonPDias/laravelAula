@@ -10,6 +10,7 @@
         <th>Calorias</th>
         <th>Descrição</th>
         <th>Editar</th>
+        <th>Deletar</th>
 </tr>
 @foreach($allFood as $food)
     <tr>
@@ -17,7 +18,14 @@
         <td>{{$food->name}}</td>
         <td>{{$food->calories}}</td>
         <td>{{$food->description}}</td>
-        <td><a href="#">Editar</a></td>
+        <td><a href="/food/{{$food->id}}/edit">Editar</a></td>
+        <td>
+            <form action="/food/{{$food->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit">Deletar</button>
+            </form>
+        </td>
 
 </tr>
 @endforeach

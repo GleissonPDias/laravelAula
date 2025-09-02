@@ -25,4 +25,8 @@ class FoodController extends Controller
         $food->update($request->all());
         return redirect('/food');
     }
+    public function destroy(Food $food){
+        $food->delete();
+        return redirect('/food');
+    }
 }
