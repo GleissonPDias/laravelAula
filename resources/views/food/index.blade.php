@@ -15,7 +15,7 @@
 @foreach($allFood as $food)
     <tr>
         <td>{{$food->id}}</td>
-        <td>{{$food->name}}</td>
+        <td><a href="/food/{{$food->id}}">{{$food->name}}</a></td>
         <td>{{$food->calories}}</td>
         <td>{{$food->description}}</td>
         <td><a href="/food/{{$food->id}}/edit">Editar</a></td>

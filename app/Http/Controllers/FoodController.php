@@ -29,4 +29,7 @@ class FoodController extends Controller
         $food->delete();
         return redirect('/food');
     }
+    public function show(Food $food){
+        return view('food.show', ['food' => $food]);
+    }
 }
