@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class FoodController extends Controller
         return redirect('/food'); 
     }
     public function edit(Food $food){
-        return view('food.edit', ['food' => $food]);
+        return view('food.edit', ['food' => $food, 'categories'=> Category::all()]);
     }
     public function update(Food $food, Request $request){
         $food->update($request->all());

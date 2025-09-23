@@ -8,6 +8,7 @@
         <th>Id</th>
         <th>Nome</th>
         <th>Calorias</th>
+        <th>Categoria</th>
         <th>Descrição</th>
         <th>Editar</th>
         <th>Deletar</th>
@@ -17,6 +18,7 @@
         <td>{{$food->id}}</td>
         <td><a href="/food/{{$food->id}}">{{$food->name}}</a></td>
         <td>{{$food->calories}}</td>
+        <td>{{$food->category->name}}</td>
         <td>{{$food->description}}</td>
         <td><a href="/food/{{$food->id}}/edit">Editar</a></td>
         <td>

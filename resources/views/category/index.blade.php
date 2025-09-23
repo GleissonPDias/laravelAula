@@ -7,6 +7,7 @@
     <tr>
         <th>Id</th>
         <th>Nome</th>
+        <th>Comida</th>
         <th>Descrição</th>
         <th>Editar</th>
         <th>Deletar</th>
@@ -15,6 +16,7 @@
     <tr>
         <td>{{$category->id}}</td>
         <td><a href="/category/{{$category->id}}">{{$category->name}}</a></td>
+        <td>{{$category->food->count()}}</td>
         <td>{{$category->description}}</td>
         <td><a href="/category/{{$category->id}}/edit">Editar</a></td>
         <td>
